@@ -2,7 +2,9 @@ class Solution {
 public:
     //BACKTRACKING
     void generateSubset(int start, int end, int k, vector<vector<int>> &sub, vector<int> &curr){
-        
+        if(end==0){
+            return;
+        }
         if(curr.size()==k){ //condition till k=2 (0==2) (1==2) (2==2)
             sub.push_back(curr); //copy curr list inside subset list //1,2 //1,3 //2,3
             return; //since do not want to search more after k combination of elements
